@@ -406,6 +406,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1921106118}
+        m_TargetAssemblyTypeName: LevelHealth, Assembly-CSharp
+        m_MethodName: ShowValue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &155162185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,7 +478,6 @@ GameObject:
   m_Component:
   - component: {fileID: 364968300}
   - component: {fileID: 364968301}
-  - component: {fileID: 364968303}
   - component: {fileID: 364968302}
   m_Layer: 5
   m_Name: Slider
@@ -563,20 +574,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _slider: {fileID: 364968301}
   _healthChanger: {fileID: 27443541}
---- !u!114 &364968303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 364968299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f640e49d5e7bf934e9598b3d48bb0e60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hitButton: {fileID: 0}
-  _cureButton: {fileID: 0}
 --- !u!1 &492884367
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,6 +762,18 @@ MonoBehaviour:
       - m_Target: {fileID: 364968302}
         m_TargetAssemblyTypeName: SliderScript, Assembly-CSharp
         m_MethodName: ChangePosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1921106118}
+        m_TargetAssemblyTypeName: LevelHealth, Assembly-CSharp
+        m_MethodName: ShowValue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1258,8 +1267,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4280010783
-  m_fontColor: {r: 0.122400224, g: 0.7830189, b: 0.106372334, a: 1}
+    rgba: 4278255360
+  m_fontColor: {r: 0, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1601,6 +1610,7 @@ GameObject:
   - component: {fileID: 1921106115}
   - component: {fileID: 1921106114}
   - component: {fileID: 1921106117}
+  - component: {fileID: 1921106118}
   m_Layer: 5
   m_Name: Health (Level)
   m_TagString: Untagged
@@ -1776,3 +1786,17 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1921106118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921106112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1ff60b9665e8c945a80eb7cd49a379b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthChanger: {fileID: 27443541}
+  _text: {fileID: 1921106114}
