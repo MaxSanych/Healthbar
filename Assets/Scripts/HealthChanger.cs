@@ -1,25 +1,29 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class HealthChanger : MonoBehaviour
 {
+    [SerializeField] private Player _player;
 
-    [SerializeField] private HitButton _hitButton;
-    [SerializeField] private CureButton _cureButton;
+    public event UnityAction AmountChanged;
 
     private float _minValue = 0f;
     private float _maxValue = 100f;
 
     public float CurrentValue { get; private set; }
 
-    public void DecreaseValue()
+    private void Awake()
     {
-        if (CurrentValue > _minValue)
-            CurrentValue -= _hitButton.AmountOfDamage;
+        CurrentValue = _player.Health;
     }
 
-    public void IncreaseValue()
+    public void ChangeValue(float amountOfDamage)
     {
-        if (CurrentValue < _maxValue)
-            CurrentValue += _cureButton.AmountOfHealthCured;
+        CurrentValue += amountOfDamage;
+
+        if (CurrentValue >= _minValue && CurrentValue <= _maxValue)
+            AmountChanged?.Invoke();
+        else
+            CurrentValue -= amountOfDamage;
     }
 }

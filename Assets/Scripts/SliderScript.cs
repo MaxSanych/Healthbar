@@ -16,9 +16,26 @@ public class SliderScript : MonoBehaviour
     private void Awake()
     {
         _slider = GetComponent<Slider>();
+
+        SetPosition();
+    }
+
+    private void OnEnable()
+    {
+        _healthChanger.AmountChanged += ChangePosition;
+    }
+
+    private void OnDisable()
+    {
+        _healthChanger.AmountChanged -= ChangePosition;
     }
 
     public void ChangePosition()
+    {
+        SetPosition();
+    }
+
+    private void SetPosition()
     {
         _currentValue = _healthChanger.CurrentValue;
         _slider.DOValue(_currentValue, _changeValueTime).SetEase(Ease.Linear).SetAutoKill(false);

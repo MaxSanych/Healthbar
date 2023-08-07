@@ -295,8 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f640e49d5e7bf934e9598b3d48bb0e60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hitButton: {fileID: 155162187}
-  _cureButton: {fileID: 593169026}
+  _player: {fileID: 1327709512}
 --- !u!1 &155162182
 GameObject:
   m_ObjectHideFlags: 0
@@ -384,37 +383,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 27443541}
         m_TargetAssemblyTypeName: HealthChanger, Assembly-CSharp
-        m_MethodName: DecreaseValue
-        m_Mode: 1
+        m_MethodName: ChangeValue
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 364968302}
-        m_TargetAssemblyTypeName: SliderScript, Assembly-CSharp
-        m_MethodName: ChangePosition
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1921106118}
-        m_TargetAssemblyTypeName: LevelHealth, Assembly-CSharp
-        m_MethodName: ShowValue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: -10
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -749,37 +724,13 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 27443541}
         m_TargetAssemblyTypeName: HealthChanger, Assembly-CSharp
-        m_MethodName: IncreaseValue
-        m_Mode: 1
+        m_MethodName: ChangeValue
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 364968302}
-        m_TargetAssemblyTypeName: SliderScript, Assembly-CSharp
-        m_MethodName: ChangePosition
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1921106118}
-        m_TargetAssemblyTypeName: LevelHealth, Assembly-CSharp
-        m_MethodName: ShowValue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 10
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -1211,8 +1162,9 @@ GameObject:
   - component: {fileID: 1327709509}
   - component: {fileID: 1327709511}
   - component: {fileID: 1327709510}
+  - component: {fileID: 1327709512}
   m_Layer: 5
-  m_Name: Health (Text)
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1235,7 +1187,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -328.2, y: 210.1}
+  m_AnchoredPosition: {x: -346, y: 221}
   m_SizeDelta: {x: 12.522, y: 28.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1327709510
@@ -1258,7 +1210,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Health
+  m_text: Health Player
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -1285,7 +1237,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.2
+  m_fontSize: 25
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1321,7 +1273,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -87.19904, w: 0}
+  m_margin: {x: 0, y: 0, z: -137.19196, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1335,6 +1287,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1327709508}
   m_CullTransparentMesh: 1
+--- !u!114 &1327709512
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327709508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86248cba8caa36b4c9167fa3978a9ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 50
 --- !u!1 &1437156840
 GameObject:
   m_ObjectHideFlags: 0
